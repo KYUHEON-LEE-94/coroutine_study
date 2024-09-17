@@ -1,4 +1,4 @@
-package Scopebuilder
+package part1.Scopebuilder
 
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay

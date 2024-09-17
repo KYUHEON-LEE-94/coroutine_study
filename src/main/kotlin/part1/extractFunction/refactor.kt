@@ -1,4 +1,4 @@
-package extractFunction
+package part1.extractFunction
 
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
