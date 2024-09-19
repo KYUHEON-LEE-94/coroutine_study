@@ -1,6 +1,9 @@
 package part2
 
-import kotlinx.coroutines.*
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.withTimeout
 
 /**
  *packageName    : part2
@@ -35,7 +38,7 @@ import kotlinx.coroutines.*
 //}
 
 
-fun main(args: Array<String>) = runBlocking<Unit> {
+fun main(args: Array<String>) = runBlocking {
     withTimeout(1300L) {
         launch {
             try {
