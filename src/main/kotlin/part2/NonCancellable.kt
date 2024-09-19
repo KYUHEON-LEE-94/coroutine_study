@@ -38,7 +38,7 @@ import kotlinx.coroutines.withTimeout
 //}
 
 
-fun main(args: Array<String>) = runBlocking {
+fun mainNonCancellation(args: Array<String>) = runBlocking {
     withTimeout(1300L) {
         launch {
             try {

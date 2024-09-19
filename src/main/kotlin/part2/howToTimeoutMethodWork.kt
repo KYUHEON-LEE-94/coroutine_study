@@ -21,7 +21,7 @@ import kotlinx.coroutines.runBlocking
  *
  * <pre>
  */
-fun main(args: Array<String>) = runBlocking {
+fun mainTimeout(args: Array<String>) = runBlocking {
     val job = launch {
         try {
             repeat(2) { i ->

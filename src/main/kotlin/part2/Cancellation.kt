@@ -50,7 +50,7 @@ import java.io.Closeable
 //    println("main : Now I can quit.")
 //}
 
-fun main(args: Array<String>) = runBlocking {
+fun mainCancellation(args: Array<String>) = runBlocking {
     val job = launch {
         SleepingBed().use {
             it.sleep(1000)
