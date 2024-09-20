@@ -30,12 +30,12 @@ fun main() = runBlocking {
     println("Done")
 }
 
-fun CoroutineScope.produceNumber(max:Int) : ReceiveChannel<Int> = produce{
+fun CoroutineScope.produceNumber(max:Int) = produce{
     for (x in 1..max){
         send(x)
     }
 }
 
-fun CoroutineScope.produceDouble(numbers:ReceiveChannel<Int>): ReceiveChannel<Int> = produce {
+fun CoroutineScope.produceDouble(numbers:ReceiveChannel<Int>) = produce {
     numbers.consumeEach { send(it*2) }
 }
