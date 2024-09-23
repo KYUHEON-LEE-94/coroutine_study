@@ -1,12 +1,12 @@
 package part4
 
+import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.async
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
 import kotlin.system.measureTimeMillis
 
 /**
- * @Description : async.java
+ * @Description : LazyAsync.java
  * @author      : heon
  * @since       : 2024-09-23
  *
@@ -21,10 +21,15 @@ import kotlin.system.measureTimeMillis
  *
  * <pre>
  */
-fun Asyncmain() = runBlocking {
+fun main(args: Array<String>) = runBlocking  {
     val time = measureTimeMillis {
-        val one = async { doSomethingUsefulOne() }
-        val two = async { doSomethingUsefulTwo() }
+        val one = async (start = CoroutineStart.LAZY) { doSomethingUsefulOne() }
+        val two = async (start = CoroutineStart.LAZY) { doSomethingUsefulTwo() }
+
+        //If comment out below two lines, two coroutines will be called sequentially.
+        one.start()
+        two.start()
+
         println("The answer is ${one.await() + two.await()}")
     }
     println("Completed in $time ms")
