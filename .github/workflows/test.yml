@@ -1,0 +1,40 @@
+ame: Kotlin Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. GitHub repository를 체크아웃
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2. JDK 설치 (Kotlin은 JVM에서 실행되므로 JDK가 필요함)
+      - name: Set up JDK 21
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin' # OpenJDK의 temurin 배포판을 사용
+          java-version: '21'       # 프로젝트에 맞는 JDK 버전을 사용
+
+      # 3. Gradle 캐시 설정 (빌드 속도를 높이기 위해)
+      - name: Cache Gradle packages
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+      # 4. Gradle 빌드 및 테스트 실행
+      - name: Build and Test with Gradle
+        run: ./gradlew test
