@@ -44,7 +44,7 @@ fun CoroutineScope.filter(numbers:ReceiveChannel<Int>, prime:Int) = produce {
     }
 }
 
-fun main(args: Array<String>) {
+fun main() {
     var cur = getNumberIteratorFrom(2)
     for (i in 1..10) {
         val prime = cur.next()

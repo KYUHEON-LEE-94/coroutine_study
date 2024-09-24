@@ -44,7 +44,7 @@ import kotlinx.coroutines.runBlocking
 //    job.join()
 //}
 
-fun main(args: Array<String>) = runBlocking {
+fun main() = runBlocking {
     launch {
         delay(1000L)
         println("World!")

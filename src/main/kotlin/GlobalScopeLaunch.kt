@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
  * 2024-09-14        LEE KYUHEON       최초 생성
  */
 
-    fun main(args: Array<String>){
+    fun main(){
         GlobalScope.launch {
             delay(1000L)
             print("World!")
