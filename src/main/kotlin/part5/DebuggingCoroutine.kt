@@ -21,7 +21,7 @@ import kotlinx.coroutines.runBlocking
  */
 fun log(msg: String) = println("[${Thread.currentThread().name}] $msg")
 
-fun main(args: Array<String>) = runBlocking<Unit> {
+fun main() = runBlocking {
     val a = async {
         log("I'm computing a piece of the answer")
         6

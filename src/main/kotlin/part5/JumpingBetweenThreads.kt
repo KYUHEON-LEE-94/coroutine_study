@@ -20,7 +20,7 @@ import kotlinx.coroutines.withContext
  *
  * <pre>
  */
-fun main(args: Array<String>) = runBlocking {
+fun main() = runBlocking {
     newSingleThreadContext("Ctx1").use { ctx1 ->
         newSingleThreadContext("Ctx2").use { ctx2 ->
             runBlocking(ctx1) {
