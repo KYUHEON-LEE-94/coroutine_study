@@ -3,7 +3,7 @@ package example1
 import example1.util.Callback
 
 /**
- * @Description : LocalUserSettingDataSource.java
+ * @Description : RemoteUserSettingDataSource.java
  * @author      : heon
  * @since       : 2024-09-30
  *
@@ -18,21 +18,20 @@ import example1.util.Callback
  *
  * <pre>
  */
-class LocalUserSettingDataSource : UserSettingDataSource {
+class RemoteUserSettingDataSource: UserSettingDataSource {
     override fun loadUserSetting(userId: String, callback: Callback<UserSetting>) {
-        Thread.sleep(100)
+        Thread.sleep(200)
 
         callback.onSuccess(
             UserSetting(
                 userId = userId,
                 primaryColor = "FFFF0000",
-                secondaryColor = "FF0000FF"
+                secondaryColor = "FF00FF00"
             )
         )
     }
 
     override fun updateUserSetting(userSetting: UserSetting, callback: Callback<Unit>) {
-        Thread.sleep(100)
-        callback.onSuccess(Unit)
+        throw UnsupportedOperationException()
     }
 }

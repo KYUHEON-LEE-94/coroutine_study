@@ -1,10 +1,7 @@
-package example1
-
-import example1.util.Callback
-
+package example1.util
 
 /**
- * @Description : UserSettingDataSource.java
+ * @Description : Logger.java
  * @author      : heon
  * @since       : 2024-09-30
  *
@@ -19,7 +16,8 @@ import example1.util.Callback
  *
  * <pre>
  */
-interface UserSettingDataSource {
-    fun loadUserSetting(userId: String, callback: Callback<UserSetting>)
-    fun updateUserSetting(userSetting: UserSetting, callback: Callback<Unit>)
+object Logger {
+    fun d(message: String) {
+        println("${Thread.currentThread().name.padEnd(40)}\t$message")
+    }
 }

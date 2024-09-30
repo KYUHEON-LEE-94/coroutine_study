@@ -1,10 +1,7 @@
-package example1
-
-import example1.util.Callback
-
+package example1.util
 
 /**
- * @Description : UserSettingDataSource.java
+ * @Description : Disposable.java
  * @author      : heon
  * @since       : 2024-09-30
  *
@@ -19,7 +16,6 @@ import example1.util.Callback
  *
  * <pre>
  */
-interface UserSettingDataSource {
-    fun loadUserSetting(userId: String, callback: Callback<UserSetting>)
-    fun updateUserSetting(userSetting: UserSetting, callback: Callback<Unit>)
+interface Disposable {
+    fun dispose()
 }

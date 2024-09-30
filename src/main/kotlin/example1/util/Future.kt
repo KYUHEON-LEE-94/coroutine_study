@@ -1,10 +1,9 @@
-package example1
+package example1.util
 
-import example1.util.Callback
-
+import java.util.concurrent.Future
 
 /**
- * @Description : UserSettingDataSource.java
+ * @Description : Future.java
  * @author      : heon
  * @since       : 2024-09-30
  *
@@ -19,7 +18,3 @@ import example1.util.Callback
  *
  * <pre>
  */
-interface UserSettingDataSource {
-    fun loadUserSetting(userId: String, callback: Callback<UserSetting>)
-    fun updateUserSetting(userSetting: UserSetting, callback: Callback<Unit>)
-}
