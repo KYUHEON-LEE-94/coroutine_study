@@ -1,6 +1,8 @@
-package example1
+package callbackVSRxVSCoroutine.callBackExample.dataSource
 
-import example1.util.Callback
+import callbackVSRxVSCoroutine.callBackExample.UserSetting
+import callbackVSRxVSCoroutine.callBackExample.UserSettingDataSource
+import callbackVSRxVSCoroutine.callBackExample.util.Callback
 
 /**
  * @Description : LocalUserSettingDataSource.java

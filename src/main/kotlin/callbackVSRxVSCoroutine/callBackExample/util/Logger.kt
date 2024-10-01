@@ -1,7 +1,7 @@
-package example1
+package callbackVSRxVSCoroutine.callBackExample.util
 
 /**
- * @Description : UserSetting.java
+ * @Description : Logger.java
  * @author      : heon
  * @since       : 2024-09-30
  *
@@ -16,12 +16,8 @@ package example1
  *
  * <pre>
  */
-data class UserSetting(
-    val userId: String,
-    val primaryColor: String,
-    val secondaryColor: String
-){
-    fun fold(userSetting: UserSetting): UserSetting {
-        return UserSetting(userId, primaryColor, secondaryColor)
+object Logger {
+    fun d(message: String) {
+        println("${Thread.currentThread().name.padEnd(40)}\t$message")
     }
 }

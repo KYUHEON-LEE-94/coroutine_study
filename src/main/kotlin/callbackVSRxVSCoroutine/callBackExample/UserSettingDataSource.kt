@@ -1,9 +1,10 @@
-package example1.util
+package callbackVSRxVSCoroutine.callBackExample
 
-import java.util.concurrent.Future
+import callbackVSRxVSCoroutine.callBackExample.util.Callback
+
 
 /**
- * @Description : Future.java
+ * @Description : UserSettingDataSource.java
  * @author      : heon
  * @since       : 2024-09-30
  *
@@ -18,3 +19,7 @@ import java.util.concurrent.Future
  *
  * <pre>
  */
+interface UserSettingDataSource {
+    fun loadUserSetting(userId: String, callback: Callback<UserSetting>)
+    fun updateUserSetting(userSetting: UserSetting, callback: Callback<Unit>)
+}

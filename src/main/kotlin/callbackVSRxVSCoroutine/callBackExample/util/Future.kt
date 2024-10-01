@@ -1,7 +1,9 @@
-package example1.util
+package callbackVSRxVSCoroutine.callBackExample.util
+
+import java.util.concurrent.Future
 
 /**
- * @Description : Disposable.java
+ * @Description : Future.java
  * @author      : heon
  * @since       : 2024-09-30
  *
@@ -16,6 +18,3 @@ package example1.util
  *
  * <pre>
  */
-interface Disposable {
-    fun dispose()
-}

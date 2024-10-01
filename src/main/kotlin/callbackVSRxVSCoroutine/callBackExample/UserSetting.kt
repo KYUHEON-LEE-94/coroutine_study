@@ -1,10 +1,7 @@
-package example1
-
-import example1.util.Callback
-
+package callbackVSRxVSCoroutine.callBackExample
 
 /**
- * @Description : UserSettingDataSource.java
+ * @Description : UserSetting.java
  * @author      : heon
  * @since       : 2024-09-30
  *
@@ -19,7 +16,12 @@ import example1.util.Callback
  *
  * <pre>
  */
-interface UserSettingDataSource {
-    fun loadUserSetting(userId: String, callback: Callback<UserSetting>)
-    fun updateUserSetting(userSetting: UserSetting, callback: Callback<Unit>)
+data class UserSetting(
+    val userId: String,
+    val primaryColor: String,
+    val secondaryColor: String
+){
+    fun fold(userSetting: UserSetting): UserSetting {
+        return UserSetting(userId, primaryColor, secondaryColor)
+    }
 }
