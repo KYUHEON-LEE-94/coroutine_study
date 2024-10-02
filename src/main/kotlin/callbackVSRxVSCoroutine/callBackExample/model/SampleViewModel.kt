@@ -1,10 +1,10 @@
-package example1.model
+package callbackVSRxVSCoroutine.callBackExample.model
 
-import example1.UserSetting
-import example1.UserSettingRepository
-import example1.util.Callback
-import example1.util.Disposable
-import example1.util.Logger
+import callbackVSRxVSCoroutine.callBackExample.UserSetting
+import callbackVSRxVSCoroutine.callBackExample.UserSettingRepository
+import callbackVSRxVSCoroutine.callBackExample.util.Callback
+import callbackVSRxVSCoroutine.callBackExample.util.Disposable
+import callbackVSRxVSCoroutine.callBackExample.util.Logger
 
 /**
  * @Description : SampleViewModel.java

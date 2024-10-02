@@ -1,9 +1,11 @@
-package example1
+package callbackVSRxVSCoroutine.callBackExample
 
-import example1.util.Callback
-import example1.util.Disposable
-import example1.util.Logger
-import example1.util.asDisposable
+import callbackVSRxVSCoroutine.callBackExample.dataSource.LocalUserSettingDataSource
+import callbackVSRxVSCoroutine.callBackExample.dataSource.RemoteUserSettingDataSource
+import callbackVSRxVSCoroutine.callBackExample.util.Callback
+import callbackVSRxVSCoroutine.callBackExample.util.Disposable
+import callbackVSRxVSCoroutine.callBackExample.util.Logger
+import callbackVSRxVSCoroutine.callBackExample.util.asDisposable
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 import kotlin.coroutines.cancellation.CancellationException

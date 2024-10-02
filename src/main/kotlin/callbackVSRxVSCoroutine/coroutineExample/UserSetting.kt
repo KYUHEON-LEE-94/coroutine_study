@@ -1,7 +1,7 @@
-package example1.util
+package callbackVSRxVSCoroutine.coroutineExample
 
 /**
- * @Description : Callback.java
+ * @Description : UserSetting.java
  * @author      : heon
  * @since       : 2024-09-30
  *
@@ -16,7 +16,12 @@ package example1.util
  *
  * <pre>
  */
-interface Callback<T> {
-    fun onSuccess(value: T)
-    fun onFail(throwable: Throwable)
+data class UserSetting(
+    val userId: String,
+    val primaryColor: String,
+    val secondaryColor: String
+){
+    fun fold(userSetting: UserSetting): UserSetting {
+        return UserSetting(userId, primaryColor, secondaryColor)
+    }
 }

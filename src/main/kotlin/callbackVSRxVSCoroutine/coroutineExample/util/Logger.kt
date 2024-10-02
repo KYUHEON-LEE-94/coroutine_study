@@ -1,7 +1,7 @@
-package example1.util
+package callbackVSRxVSCoroutine.coroutineExample.util
 
 /**
- * @Description : Disposable.java
+ * @Description : Logger.java
  * @author      : heon
  * @since       : 2024-09-30
  *
@@ -16,6 +16,8 @@ package example1.util
  *
  * <pre>
  */
-interface Disposable {
-    fun dispose()
+object Logger {
+    fun d(message: String) {
+        println("${Thread.currentThread().name.padEnd(40)}\t$message")
+    }
 }

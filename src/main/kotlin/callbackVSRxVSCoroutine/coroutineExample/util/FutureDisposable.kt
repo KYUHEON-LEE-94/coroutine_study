@@ -1,9 +1,9 @@
-package example1.util
+package callbackVSRxVSCoroutine.coroutineExample.util
 
 import java.util.concurrent.Future
 
 /**
- * @Description : Future.java
+ * @Description : FutureDisposable.java
  * @author      : heon
  * @since       : 2024-09-30
  *
@@ -18,3 +18,15 @@ import java.util.concurrent.Future
  *
  * <pre>
  */
+
+class FutureDisposable(private val future: Future<*>) : Disposable {
+    override fun dispose() {
+        if (future.isCancelled.not()) {
+            future.cancel(true)
+        }
+    }
+}
+
+fun Future<*>.asDisposable(): Disposable {
+    return FutureDisposable(this)
+}
